@@ -6,8 +6,8 @@ import { TripDataService } from '../services/trip-data.service';
 
 @Component({
   selector: 'app-add-trip',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  //standalone: true,
+  //imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './add-trip.component.html',
   styleUrl: './add-trip.component.css'
 })
@@ -36,6 +36,19 @@ constructor(
   })
  }
 
+ /*
+ public onSubmit() {
+  this.submitted = true;
+  if (this.addForm.valid) {
+    this.tripService.addTrip(this.addForm.value)
+    .then( data => {
+      console.log(data);
+      this.router.navigate(['']);
+    });
+  }
+}*/
+
+ 
  public onSubmit() {
    this.submitted = true;
     if(this.addForm.valid){
@@ -50,6 +63,7 @@ constructor(
      }});
    }
  }
-// get the form short name to access the form fields
-get f() { return this.addForm.controls; }
+
+  // get the form short name to access the form fields
+  get f() { return this.addForm.controls; }
 }

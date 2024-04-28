@@ -7,8 +7,8 @@ import { Trip } from '../models/trip';
 
 @Component({
   selector: 'app-edit-trip',
-  standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  //standalone: true,
+  //imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './edit-trip.component.html',
   styleUrl: './edit-trip.component.css'
 })
@@ -89,6 +89,25 @@ export class EditTripComponent implements OnInit {
         })
      }
   }
+  
+  /*
+  this.tripDataService.getTrip(tripCode)
+  .then(data => {
+    console.log(data);
+    this.editForm.patchValue(data);
+  })
+}
+
+  public onSubmit() {
+    this.submitted = true;
+    if (this.editForm.valid) {
+    this.tripDataService.updateTrip(this.editForm.value)
+    .then(data => {
+    console.log(data);
+    this.router.navigate(['']);
+    });
+    }
+  } */
 
   get f() { return this.editForm.controls; }
 }
